@@ -1,8 +1,3 @@
-/*
- * Fetcher.
- * Used to pull data from the backend API endpoints, handling any errors
- */
-
 import { Fetcher, Category } from "../types";
 
 /**

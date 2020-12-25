@@ -1,8 +1,3 @@
-/*
- * Parser is used to combine the product info and availability data,
- * forming one unified object
- */
-
 import { Fetcher, Parser } from "../types";
 
 /**

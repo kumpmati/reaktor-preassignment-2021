@@ -4,14 +4,14 @@ export enum Category {
   Facemasks = "facemasks",
 }
 
-export namespace Api {
+export declare namespace Api {
   export type Response = {
     category: Category;
     products: Parser.Product[];
   };
 }
 
-export namespace Fetcher {
+export declare namespace Fetcher {
   // successful response from /v2/products/:category
   export type ProductEndpointResponse = Product[];
 
@@ -38,7 +38,7 @@ export namespace Fetcher {
   };
 }
 
-export namespace Parser {
+export declare namespace Parser {
   export type Response = Product[];
 
   export enum Availability {
@@ -49,7 +49,7 @@ export namespace Parser {
 
   export type Product = {
     id: string;
-    type: string;
+    type: Category;
     name: string;
     color: string[];
     price: number;
