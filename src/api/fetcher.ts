@@ -2,7 +2,6 @@ import beanies from "../mocks/beanies.json";
 import facemasks from "../mocks/facemasks.json";
 import gloves from "../mocks/gloves.json";
 import { Fetcher, Category, Product } from "../types";
-const BASE_URL = "https://bad-api-assignment.reaktor.com/v2";
 
 /**
  * Asynchronously sends a GET request to the /v2/products/:category endpoint

@@ -10,8 +10,6 @@ export const parseData = async (
   products: Fetcher.ProductEndpointResponse,
   availabilities: Fetcher.AvailabilityEndpointResponse[]
 ): Promise<Parser.Response> => {
-  const flatAvailabilities = availabilities.flat(1);
-
   const finalProducts = products.map(p => {
     const product: Product = {
       ...p,
