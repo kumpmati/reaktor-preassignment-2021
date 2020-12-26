@@ -2,12 +2,29 @@ export enum Category {
   Beanies = "beanies",
   Gloves = "gloves",
   Facemasks = "facemasks",
+  None = "",
 }
+
+export enum Availability {
+  InStock = "INSTOCK",
+  OutOfStock = "OUTOFSTOCK",
+  LessThan10 = "LESSTHAN10",
+}
+
+export type Product = {
+  id: string;
+  type: Category;
+  name: string;
+  color: string[];
+  price: number;
+  manufacturer: string;
+  availability: Availability;
+};
 
 export declare namespace Api {
   export type Response = {
     category: Category;
-    products: Parser.Product[];
+    products: Product[];
   };
 }
 
@@ -18,7 +35,7 @@ export declare namespace Fetcher {
   // single product
   export type Product = {
     id: string;
-    type: string;
+    type: Category;
     name: string;
     color: string[];
     price: number;
@@ -26,10 +43,7 @@ export declare namespace Fetcher {
   };
 
   // successful response from /v2/availability/:manufacturer
-  export type AvailabilityEndpointResponse = {
-    code: number;
-    response: ProductAvailability[];
-  };
+  export type AvailabilityEndpointResponse = ProductAvailability[];
 
   // availability of single product
   export type ProductAvailability = {
@@ -40,20 +54,12 @@ export declare namespace Fetcher {
 
 export declare namespace Parser {
   export type Response = Product[];
+}
 
-  export enum Availability {
-    InStock = "INSTOCK",
-    OutOfStock = "OUTOFSTOCK",
-    LessThan10 = "LESSTHAN10",
-  }
-
-  export type Product = {
-    id: string;
-    type: Category;
-    name: string;
-    color: string[];
-    price: number;
-    manufacturer: string;
-    availability: Availability;
+export declare namespace Nav {
+  export type Item = {
+    text: string;
+    category: Category;
+    active?: boolean;
   };
 }

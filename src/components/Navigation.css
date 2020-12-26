@@ -1,0 +1,25 @@
+nav > h2 {
+  color: gray;
+  margin: 0;
+}
+
+nav > ul {
+  list-style-type: none;
+  padding-left: 0.75em;
+}
+
+.nav-item {
+  box-sizing: content-box;
+  height: auto;
+}
+
+.nav-item.active {
+  font-weight: bold;
+}
+.nav-item > a {
+  display: block;
+  width: 100%;
+  padding: 0.5em 0;
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,4 +1,8 @@
-import { Fetcher, Category } from "../types";
+import beanies from "../mocks/beanies.json";
+import facemasks from "../mocks/facemasks.json";
+import gloves from "../mocks/gloves.json";
+import { Fetcher, Category, Product } from "../types";
+const BASE_URL = "https://bad-api-assignment.reaktor.com/v2";
 
 /**
  * Asynchronously sends a GET request to the /v2/products/:category endpoint
@@ -8,8 +12,19 @@ import { Fetcher, Category } from "../types";
  */
 export const fetchProductsData = async (
   category: Category
-): Promise<Fetcher.ProductEndpointResponse | null> => {
-  return [];
+): Promise<Fetcher.ProductEndpointResponse> => {
+  //const data = await fetch(`${BASE_URL}/products/${category}`);
+  switch (category) {
+    default:
+    case Category.Beanies:
+      return beanies as Product[];
+
+    case Category.Facemasks:
+      return facemasks as Product[];
+
+    case Category.Gloves:
+      return gloves as Product[];
+  }
 };
 
 /**
@@ -18,9 +33,6 @@ export const fetchProductsData = async (
  */
 export const fetchAvailabilityData = async (
   manufacturer: string
-): Promise<Fetcher.AvailabilityEndpointResponse | null> => {
-  return {
-    code: 200,
-    response: [],
-  };
+): Promise<Fetcher.AvailabilityEndpointResponse> => {
+  return [];
 };

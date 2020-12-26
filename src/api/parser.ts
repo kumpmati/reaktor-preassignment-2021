@@ -1,4 +1,4 @@
-import { Fetcher, Parser } from "../types";
+import { Availability, Fetcher, Parser, Product } from "../types";
 
 /**
  * Combines product data with availability data
@@ -10,5 +10,15 @@ export const parseData = async (
   products: Fetcher.ProductEndpointResponse,
   availabilities: Fetcher.AvailabilityEndpointResponse[]
 ): Promise<Parser.Response> => {
-  return [];
+  const flatAvailabilities = availabilities.flat(1);
+
+  const finalProducts = products.map(p => {
+    const product: Product = {
+      ...p,
+      availability: Availability.InStock,
+    };
+    return product;
+  });
+
+  return finalProducts;
 };

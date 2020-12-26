@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+#sidebar {
+  padding: 0 1em;
+  width: 18em;
+
+  background-color: rgb(32, 32, 32);
+  color: white;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+#content {
+  width: 100%;
+
+  box-sizing: border-box;
+  overflow-y: auto;
+}
