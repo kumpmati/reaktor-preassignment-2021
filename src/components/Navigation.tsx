@@ -20,7 +20,6 @@ const Navigation = () => {
 
   return (
     <nav>
-      <h2>Category</h2>
       <ul>
         {items.map((item, i) => (
           <li key={i} className={`nav-item ${isActive(item) ? "active" : ""}`}>

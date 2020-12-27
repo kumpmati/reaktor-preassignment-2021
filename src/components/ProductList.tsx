@@ -5,12 +5,15 @@ import "./ProductList.css";
 
 const ProductList = () => {
   const { state } = useContext(ApiContext);
+  const isEmpty = state.products.length === 0;
 
   return (
     <ol id="products">
-      {state.products.slice(0, 20).map((product, i) => (
-        <SingleProduct key={i} {...product} />
-      ))}
+      {!isEmpty
+        ? state.products.map((product, i) => (
+            <SingleProduct key={i} {...product} />
+          ))
+        : null}
     </ol>
   );
 };

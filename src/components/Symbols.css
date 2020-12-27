@@ -1,0 +1,13 @@
+#symbols {
+  list-style-type: none;
+  padding: 0;
+
+  color: rgb(77, 77, 77);
+}
+
+#symbols > li {
+  padding: 0 0.75em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

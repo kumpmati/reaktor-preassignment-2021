@@ -35,8 +35,16 @@ code {
   z-index: 3;
 }
 
+#sidebar > * + * {
+  margin-top: 2em;
+}
+
 #sidebar > h1 {
   margin: 0.5em 0.33em;
+}
+
+#sidebar h2 {
+  color: rgb(80, 80, 80);
 }
 
 #content {
