@@ -8,13 +8,17 @@ const App = () => {
   return (
     <ApiContext.Provider value={api}>
       <div className="App">
-        <div id="sidebar">
-          <h1 id="title">Wearhouse</h1>
-          <Navigation />
-        </div>
-        <div id="content">
+        <aside id="sidebar">
+          <section>
+            <h1 id="title">Wearhouse</h1>
+          </section>
+          <section>
+            <Navigation />
+          </section>
+        </aside>
+        <main id="content">
           <ProductList />
-        </div>
+        </main>
       </div>
     </ApiContext.Provider>
   );

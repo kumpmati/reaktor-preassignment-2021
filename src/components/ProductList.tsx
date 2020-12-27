@@ -7,11 +7,11 @@ const ProductList = () => {
   const { state } = useContext(ApiContext);
 
   return (
-    <div id="products">
+    <ol id="products">
       {state.products.slice(0, 20).map((product, i) => (
         <SingleProduct key={i} {...product} />
       ))}
-    </div>
+    </ol>
   );
 };
 

@@ -29,10 +29,10 @@ const SingleProduct = ({
           <b>{price} €</b>
         </p>
         <p>
-          Type: <b>{type}</b>
+          Color: <b>{color.join(", ")}</b>
         </p>
         <p>
-          Color: <b>{color.join(", ")}</b>
+          Type: <b>{type}</b>
         </p>
       </span>
     </div>

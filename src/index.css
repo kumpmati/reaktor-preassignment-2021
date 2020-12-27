@@ -18,6 +18,8 @@ code {
 }
 
 #title {
+  font-size: 2rem;
+  margin: 1em 0.5em;
   color: white;
   background-color: black;
   padding: 0.1em 0.75em;
@@ -26,6 +28,7 @@ code {
 }
 
 #sidebar {
+  width: 18em;
   padding: 0 1.25em;
   box-sizing: border-box;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.3);
