@@ -10,10 +10,16 @@ export const parseData = async (
   products: Fetcher.ProductEndpointResponse,
   availabilities: Fetcher.AvailabilityEndpointResponse[]
 ): Promise<Parser.Response> => {
+  const avs = [
+    Availability.InStock,
+    Availability.LessThan10,
+    Availability.OutOfStock,
+  ];
+
   const finalProducts = products.map(p => {
     const product: Product = {
       ...p,
-      availability: Availability.InStock,
+      availability: avs[~~(Math.random() * 3)],
     };
     return product;
   });

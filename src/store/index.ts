@@ -5,7 +5,7 @@ import { Api, Category } from "../types";
 /**
  * Initial state of the product view
  */
-export const initialState: Api.Response = {
+export const initialData: Api.Response = {
   category: Category.None,
   products: [],
 };
@@ -13,12 +13,8 @@ export const initialState: Api.Response = {
 /**
  * Consumed by the navigation and product list elements
  */
-export const ApiContext = createContext<{
-  state: Api.Response;
-  loading: boolean;
-  set: (c: Category) => Promise<void>;
-}>({
-  state: initialState,
+export const ApiContext = createContext<Api.Context>({
+  state: initialData,
   loading: false,
   set: async () => {},
 });
@@ -36,9 +32,13 @@ export const useApi = (initial: Api.Response) => {
    * @param category Category to show
    */
   const set = async (category: Category) => {
+    if (category === state.category) return;
+
     setLoading(true);
     setState(await getProducts(category));
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
   };
 
   return { state, loading, set };

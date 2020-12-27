@@ -26,6 +26,12 @@ export declare namespace Api {
     category: Category;
     products: Product[];
   };
+
+  export type Context = {
+    state: Api.Response;
+    loading: boolean;
+    set: (c: Category) => Promise<void>;
+  };
 }
 
 export declare namespace Fetcher {

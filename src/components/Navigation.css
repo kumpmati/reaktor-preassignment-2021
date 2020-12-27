@@ -1,25 +1,49 @@
 nav > h2 {
   color: gray;
-  margin: 0;
 }
 
 nav > ul {
   list-style-type: none;
-  padding-left: 0.75em;
+  padding: 0;
 }
 
 .nav-item {
-  box-sizing: content-box;
-  height: auto;
+  display: flex;
+  align-items: center;
+  color: rgb(77, 77, 77);
+}
+
+.nav-item:hover {
+  background-color: black;
+  color: white;
 }
 
 .nav-item.active {
   font-weight: bold;
+  background-color: black;
+  color: white;
 }
+
 .nav-item > a {
+  box-sizing: border-box;
   display: block;
   width: 100%;
-  padding: 0.5em 0;
+  padding: 1em;
   text-decoration: none;
   color: inherit;
+}
+
+.nav-item .spinner > svg {
+  width: 1.25em;
+  margin-right: 0.75em;
+  animation: spin 800ms infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
