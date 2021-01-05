@@ -6,9 +6,9 @@ export enum Category {
 }
 
 export enum Availability {
-  InStock = "INSTOCK",
-  OutOfStock = "OUTOFSTOCK",
-  LessThan10 = "LESSTHAN10",
+  InStock = "instock",
+  OutOfStock = "outofstock",
+  LessThan10 = "lessthan10",
 }
 
 export type Product = {

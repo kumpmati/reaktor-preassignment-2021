@@ -34,11 +34,16 @@ export const useApi = (initial: Api.Response) => {
   const set = async (category: Category) => {
     if (category === state.category) return;
 
-    setLoading(true);
-    setState(await getProducts(category));
-    setTimeout(() => {
+    const timeoutError = setTimeout(() => {
       setLoading(false);
-    }, 1500);
+      alert("Something went wrong, try again.");
+    }, 5 * 1000);
+
+    setLoading(true);
+    const response = await getProducts(category);
+    setState(response);
+    clearTimeout(timeoutError);
+    setLoading(false);
   };
 
   return { state, loading, set };

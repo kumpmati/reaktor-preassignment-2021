@@ -1,20 +1,22 @@
 import { useContext } from "react";
 import { ApiContext } from "../store";
 import { Category, Nav } from "../types";
-import { ReactComponent as LoadingIcon } from "./icons/Loading.svg";
 import "./Navigation.css";
+
+/**
+ * Navigation items
+ */
+const items: Nav.Item[] = [
+  { text: "Beanies", category: Category.Beanies },
+  { text: "Facemasks", category: Category.Facemasks },
+  { text: "Gloves", category: Category.Gloves },
+];
 
 /**
  * Renders the category navigation list
  */
 const Navigation = () => {
-  const { state, set, loading } = useContext(ApiContext);
-
-  const items: Nav.Item[] = [
-    { text: "Beanies", category: Category.Beanies },
-    { text: "Facemasks", category: Category.Facemasks },
-    { text: "Gloves", category: Category.Gloves },
-  ];
+  const { state, set } = useContext(ApiContext);
 
   const isActive = (item: Nav.Item) => state.category === item.category;
 
@@ -26,9 +28,6 @@ const Navigation = () => {
             <a href="/#/" onClick={() => set(item.category)}>
               {item.text}
             </a>
-            <span className="spinner">
-              {loading && isActive(item) ? <LoadingIcon /> : null}
-            </span>
           </li>
         ))}
       </ul>

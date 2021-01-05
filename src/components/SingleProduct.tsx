@@ -1,6 +1,7 @@
+import { create } from "domain";
 import { createElement, memo } from "react";
 import { Product } from "../types";
-import AvailabilityIcons from "./icons/availability";
+import { getAvailabilityIcon } from "./icons/availability";
 import "./SingleProduct.css";
 
 /**
@@ -15,11 +16,11 @@ const SingleProduct = ({
   type,
   color,
 }: Product) => {
-  const icon = createElement(AvailabilityIcons[availability]);
-
   return (
     <div className="product">
-      <span className="product-availability">{icon}</span>
+      <span className="product-availability">
+        {getAvailabilityIcon(availability)}
+      </span>
       <span className="main-info">
         <h1>{name}</h1>
         <h2>{manufacturer}</h2>

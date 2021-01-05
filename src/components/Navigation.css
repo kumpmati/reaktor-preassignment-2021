@@ -32,18 +32,3 @@ nav > ul {
   text-decoration: none;
   color: inherit;
 }
-
-.nav-item .spinner > svg {
-  width: 1.25em;
-  margin-right: 0.75em;
-  animation: spin 800ms infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

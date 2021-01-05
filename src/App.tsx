@@ -1,20 +1,25 @@
 import Navigation from "./components/Navigation";
 import ProductList from "./components/ProductList";
 import Symbols from "./components/Symbols";
+import LoadingIcon from "./components/LoadingIcon";
 import { ApiContext, useApi, initialData } from "./store";
 
 const App = () => {
   const api = useApi(initialData);
+  const { loading } = api;
 
   return (
     <ApiContext.Provider value={api}>
       <div className="App">
         <aside id="sidebar">
-          <section>
-            <h1 id="title">Wearhouse</h1>
+          <section id="title">
+            <h1>Wearhouse</h1>
           </section>
-          <section>
-            <h2>Category</h2>
+          <section id="category">
+            <div>
+              <h2>Category</h2>
+              {loading && <LoadingIcon />}
+            </div>
             <Navigation />
           </section>
           <section>

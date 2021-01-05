@@ -1,30 +1,16 @@
-import { Api, Category, Fetcher } from "../types";
-import { fetchAvailabilityData, fetchProductsData } from "./fetcher";
-import { parseData } from "./parser";
-
-const getPromiseValue = (
-  p: PromiseSettledResult<Fetcher.AvailabilityEndpointResponse>
-) => (p.status === "fulfilled" ? p.value : []);
+import { Api, Category } from "../types";
+const API_URL = process.env.REACT_APP_API_URL;
 
 /**
- * Fetches data from the backend API and parses it to an easy to use format
+ * Fetches data from the backend API
  * @param {Category} category Category of the products to fetch
- * @returns {Api.Response} Parsed products
+ * @returns {Api.Response} Response containing the requested category and products
  */
 export const getProducts = async (
   category: Category
 ): Promise<Api.Response> => {
-  const rawProducts = await fetchProductsData(category);
+  const url = `${API_URL}/api/products/${category}`;
+  const payload = await (await fetch(url)).json();
 
-  // get list of unique manufacturers
-  const manufacturers = [
-    ...new Set(rawProducts?.map(product => product.manufacturer) || []),
-  ];
-
-  const availabilities = (
-    await Promise.allSettled(manufacturers.map(fetchAvailabilityData))
-  ).map(getPromiseValue);
-
-  const products = await parseData(rawProducts, availabilities);
-  return { category, products };
+  return { category, products: payload.success ? payload.response : [] };
 };
