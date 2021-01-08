@@ -37,7 +37,7 @@ export const useApi = (initial: Api.Response) => {
     const timeoutError = setTimeout(() => {
       setLoading(false);
       alert("Something went wrong, try again.");
-    }, 5 * 1000);
+    }, 30 * 1000);
 
     setLoading(true);
     const response = await getProducts(category);

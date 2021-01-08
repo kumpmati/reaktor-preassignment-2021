@@ -1,5 +1,4 @@
-import { create } from "domain";
-import { createElement, memo } from "react";
+import { memo } from "react";
 import { Product } from "../types";
 import { getAvailabilityIcon } from "./icons/availability";
 import "./SingleProduct.css";
