@@ -1,43 +1,42 @@
 .product {
-  display: flex;
-  align-items: center;
-  padding: 0.5em 0;
+	display: flex;
+	align-items: center;
+	padding: 0.5em 0;
 
-  height: 9vh;
-  min-height: 3.5em;
+	height: 4em;
 
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .product > * + * {
-  margin-left: 2em;
+	margin-left: 2em;
 }
 
 .product-availability {
-  margin-left: 1.3em;
+	margin-left: 1.3em;
 }
 
 /* Name and manufacturer */
 .main-info {
-  width: 25%;
-  min-width: max-content;
-  font-size: 0.6rem;
+	width: 25%;
+	min-width: max-content;
+	font-size: 0.6rem;
 }
 
 .main-info > * {
-  margin: 0.2em 0;
+	margin: 0.2em 0;
 }
 
 .main-info h2 {
-  color: gray;
-  font-size: 1rem;
+	color: gray;
+	font-size: 1rem;
 }
 
 /* Rest of the attributes, such as price, type and color */
 .extra-info {
-  margin-left: auto;
-  margin-right: 1em;
-  width: 22em;
-  display: flex;
-  justify-content: space-between;
+	margin-left: auto;
+	margin-right: 1em;
+	width: 22em;
+	display: flex;
+	justify-content: space-between;
 }
