@@ -22,7 +22,9 @@ const Navigation = ({ hide }: { hide: () => any }) => {
 
   const onClick = (item: Nav.Item) => {
     set(item.category);
-    hide();
+    setTimeout(() => {
+      hide();
+    }, 250);
   };
 
   return (

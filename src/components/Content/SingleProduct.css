@@ -38,3 +38,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+.expand-button {
+  opacity: 0;
+}
+
+@media all and (max-width: 1000px) {
+  .extra-info {
+    display: none;
+  }
+}

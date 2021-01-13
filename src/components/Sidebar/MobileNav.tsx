@@ -9,7 +9,7 @@ const MobileMenu = ({
 }) => {
   return (
     <div>
-      <MobileButton onClick={() => set(hidden)} />
+      <MobileButton onClick={() => set(hidden)} active={!hidden} />
     </div>
   );
 };

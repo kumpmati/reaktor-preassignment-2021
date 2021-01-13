@@ -1,22 +1,22 @@
-import { memo } from "react";
 import { Product } from "../../types";
 import { getAvailabilityIcon } from "../icons/availability";
 import "./SingleProduct.css";
 
 /**
- * Renders a single product's info
- * @param {Product} props
+ * Renders a single product
+ * @param props
  */
 const SingleProduct = ({
-  name,
-  manufacturer,
-  availability,
-  price,
-  type,
-  color,
-}: Product) => {
+  product,
+  style,
+}: {
+  product: Product;
+  style: React.CSSProperties;
+}) => {
+  const { name, type, manufacturer, price, color, availability } = product;
+
   return (
-    <>
+    <div className="product" style={style}>
       <span className="product-availability">
         {getAvailabilityIcon(availability)}
       </span>
@@ -24,10 +24,9 @@ const SingleProduct = ({
         <h1>{name}</h1>
         <h2>{manufacturer}</h2>
       </span>
+
       <span className="extra-info">
-        <p>
-          <b>{price} €</b>
-        </p>
+        <h3>{price} €</h3>
         <p>
           Color: <b>{color.join(", ")}</b>
         </p>
@@ -35,14 +34,15 @@ const SingleProduct = ({
           Type: <b>{type}</b>
         </p>
       </span>
-    </>
+    </div>
   );
 };
 
+/*
 const arePropsEqual = (
   prev: Readonly<Product>,
   next: Readonly<Product>
 ): boolean => prev.id === next.id && prev.availability === next.availability;
+*/
 
-// export memoized component
-export default memo(SingleProduct, arePropsEqual);
+export default SingleProduct;

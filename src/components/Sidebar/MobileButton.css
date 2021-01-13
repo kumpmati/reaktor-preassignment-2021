@@ -1,7 +1,6 @@
 .mobile-button {
   position: fixed;
-  top: 0.5em;
-  left: 0.5em;
+  margin: 1.25em;
 
   height: 2.5em;
   width: 2.5em;
@@ -10,9 +9,17 @@
   align-items: center;
   justify-content: center;
 
+  background-color: white;
+  color: black !important;
+  border-radius: 100%;
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+  transition: box-shadow 200ms;
+}
+
+.mobile-button:hover {
   background-color: black;
   color: white !important;
-  border-radius: 100%;
+  box-shadow: none;
 }
 
 @media all and (max-width: 950px) {

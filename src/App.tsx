@@ -6,12 +6,12 @@ const App = () => {
   const api = useApi(initialData);
 
   return (
-    <ApiContext.Provider value={api}>
-      <div className="App">
+    <div className="App">
+      <ApiContext.Provider value={api}>
         <Sidebar />
         <Content />
-      </div>
-    </ApiContext.Provider>
+      </ApiContext.Provider>
+    </div>
   );
 };
 

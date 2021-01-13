@@ -1,10 +1,17 @@
 import { ReactComponent as HamburgerIcon } from "../icons/Menu.svg";
+import { ReactComponent as LeftArrow } from "../icons/LeftArrow.svg";
 import "./MobileButton.css";
 
-const MobileButton = ({ onClick }: { onClick: () => any }) => {
+const MobileButton = ({
+  onClick,
+  active,
+}: {
+  onClick: () => any;
+  active: boolean;
+}) => {
   return (
     <a className="mobile-button" href="/#/" onClick={onClick}>
-      <HamburgerIcon />
+      {active ? <LeftArrow /> : <HamburgerIcon />}
     </a>
   );
 };
