@@ -1,6 +1,6 @@
 import { memo } from "react";
-import { Product } from "../types";
-import { getAvailabilityIcon } from "./icons/availability";
+import { Product } from "../../types";
+import { getAvailabilityIcon } from "../Icons/availability";
 import "./SingleProduct.css";
 
 /**
@@ -16,7 +16,7 @@ const SingleProduct = ({
   color,
 }: Product) => {
   return (
-    <div className="product">
+    <>
       <span className="product-availability">
         {getAvailabilityIcon(availability)}
       </span>
@@ -35,7 +35,7 @@ const SingleProduct = ({
           Type: <b>{type}</b>
         </p>
       </span>
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import { createElement } from "react";
-import { Availability } from "../../types";
+import { Availability } from "../../../types";
 
 import { ReactComponent as InStockIcon } from "./InStock.svg";
 import { ReactComponent as LessThan10Icon } from "./LessThan10.svg";

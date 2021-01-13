@@ -1,0 +1,22 @@
+.mobile-button {
+  position: fixed;
+  top: 0.5em;
+  left: 0.5em;
+
+  height: 2.5em;
+  width: 2.5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: black;
+  color: white !important;
+  border-radius: 100%;
+}
+
+@media all and (max-width: 950px) {
+  .mobile-button {
+    z-index: 1000;
+  }
+}

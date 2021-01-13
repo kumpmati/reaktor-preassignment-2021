@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ApiContext } from "../store";
+import { ApiContext } from "../../store";
 import SingleProduct from "./SingleProduct";
 import "./ProductList.css";
 

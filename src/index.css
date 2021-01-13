@@ -18,6 +18,7 @@ code {
 }
 
 #title > h1 {
+  width: min-content;
   font-size: 2rem;
   margin: 1em 0.5em;
   color: white;
@@ -25,37 +26,4 @@ code {
   padding: 0.1em 0.75em;
   -moz-user-select: none;
   -webkit-user-select: none;
-}
-
-#sidebar {
-  width: 18em;
-  padding: 0 1.25em;
-  box-sizing: border-box;
-  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.3);
-  z-index: 3;
-}
-
-#sidebar > * + * {
-  margin-top: 2em;
-}
-
-#sidebar > h1 {
-  margin: 0.5em 0.33em;
-}
-
-#sidebar h2 {
-  color: rgb(80, 80, 80);
-}
-
-#content {
-  width: 100%;
-
-  box-sizing: border-box;
-  overflow-y: auto;
-}
-
-#category > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }

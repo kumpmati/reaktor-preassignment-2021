@@ -25,16 +25,14 @@ export const ApiContext = createContext<Api.Context>({
  * @param initial Initial state of the data
  */
 export const useApi = (initial: Api.Response) => {
-  const [state, setState] = useState(initial);
   const [loading, setLoading] = useState(false);
+  const [state, setState] = useState(initial);
 
   /**
    * Changes which category is visible
    * @param category Category to show
    */
   const set = async (category: Category) => {
-    if (category === state.category) return;
-
     const timeoutError = setTimeout(() => {
       setLoading(false);
       alert("Something went wrong, try again.");

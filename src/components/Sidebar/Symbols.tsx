@@ -1,8 +1,6 @@
 import "./Symbols.css";
-
-import { ReactComponent as InStock } from "./icons/InStock.svg";
-import { ReactComponent as OutOfStock } from "./icons/OutOfStock.svg";
-import { ReactComponent as LessThan10 } from "./icons/LessThan10.svg";
+import { getAvailabilityIcon } from "../Icons/availability";
+import { Availability } from "../../types";
 
 const Symbols = () => {
   return (
@@ -10,19 +8,19 @@ const Symbols = () => {
       <li>
         <p>In stock</p>
         <span className="icon">
-          <InStock />
+          {getAvailabilityIcon(Availability.InStock)}
         </span>
       </li>
       <li>
         <p>Less than 10</p>
         <span className="icon">
-          <LessThan10 />
+          {getAvailabilityIcon(Availability.LessThan10)}
         </span>
       </li>
       <li>
         <p>Out of stock</p>
         <span className="icon">
-          <OutOfStock />
+          {getAvailabilityIcon(Availability.OutOfStock)}
         </span>
       </li>
     </ul>

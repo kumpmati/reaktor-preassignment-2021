@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ApiContext } from "../store";
-import { Category, Nav } from "../types";
+import { ApiContext } from "../../store";
+import { Category, Nav } from "../../types";
 import "./Navigation.css";
 
 /**
@@ -15,17 +15,22 @@ const items: Nav.Item[] = [
 /**
  * Renders the category navigation list
  */
-const Navigation = () => {
+const Navigation = ({ hide }: { hide: () => any }) => {
   const { state, set } = useContext(ApiContext);
 
   const isActive = (item: Nav.Item) => state.category === item.category;
+
+  const onClick = (item: Nav.Item) => {
+    set(item.category);
+    hide();
+  };
 
   return (
     <nav>
       <ul>
         {items.map((item, i) => (
           <li key={i} className={`nav-item ${isActive(item) ? "active" : ""}`}>
-            <a href="/#/" onClick={() => set(item.category)}>
+            <a href="/#/" onClick={() => onClick(item)}>
               {item.text}
             </a>
           </li>
