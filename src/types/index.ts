@@ -24,7 +24,8 @@ export type Product = {
 export declare namespace Api {
   export type Response = {
     category: Category;
-    products: Product[];
+    error: string;
+    response: Product[];
   };
 
   export type Context = {

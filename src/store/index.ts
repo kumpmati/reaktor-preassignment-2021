@@ -7,7 +7,8 @@ import { Api, Category } from "../types";
  */
 export const initialData: Api.Response = {
   category: Category.None,
-  products: [],
+  error: "",
+  response: [],
 };
 
 /**

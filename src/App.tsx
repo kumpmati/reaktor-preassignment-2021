@@ -6,7 +6,7 @@ import { ApiContext, useApi, initialData } from "./store";
 
 const App = () => {
   const api = useApi(initialData);
-  const { loading } = api;
+  const { loading, state } = api;
 
   return (
     <ApiContext.Provider value={api}>
@@ -28,6 +28,7 @@ const App = () => {
           </section>
         </aside>
         <main id="content">
+          {state.error && <h2>{state.error}</h2>}
           <ProductList />
         </main>
       </div>

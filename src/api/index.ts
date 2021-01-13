@@ -11,6 +11,7 @@ export const getProducts = async (
 ): Promise<Api.Response> => {
   const url = `${API_URL}/api/products/${category}`;
   const payload = await (await fetch(url)).json();
+  const { error, response } = payload;
 
-  return { category, products: payload.success ? payload.response : [] };
+  return { category, error, response };
 };
