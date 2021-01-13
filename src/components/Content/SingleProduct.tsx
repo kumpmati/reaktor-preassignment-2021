@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Product } from "../../types";
-import { getAvailabilityIcon } from "../Icons/availability";
+import { getAvailabilityIcon } from "../icons/availability";
 import "./SingleProduct.css";
 
 /**

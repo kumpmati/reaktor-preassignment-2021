@@ -1,5 +1,5 @@
 import "./Symbols.css";
-import { getAvailabilityIcon } from "../Icons/availability";
+import { getAvailabilityIcon } from "../icons/availability";
 import { Availability } from "../../types";
 
 const Symbols = () => {
