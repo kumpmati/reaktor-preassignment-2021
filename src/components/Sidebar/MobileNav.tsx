@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ApiContext } from "../../store";
 import MobileButton from "./MobileButton";
 
 const MobileMenu = ({
