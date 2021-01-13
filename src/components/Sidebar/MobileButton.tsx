@@ -1,4 +1,4 @@
-import { ReactComponent as HamburgerIcon } from "../Icons/Menu.svg";
+import { ReactComponent as HamburgerIcon } from "../icons/Menu.svg";
 import "./MobileButton.css";
 
 const MobileButton = ({ onClick }: { onClick: () => any }) => {
