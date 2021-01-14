@@ -28,7 +28,7 @@ const Sidebar = () => {
           <Navigation hide={hide} />
         </section>
         <section>
-          <h2>Symbols</h2>
+          <h2>Availability</h2>
           <Symbols />
         </section>
       </aside>
