@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ApiContext } from "../../store";
+import { ApiContext } from "../../api/context";
 import { Category, Nav } from "../../types";
 import "./Navigation.css";
 

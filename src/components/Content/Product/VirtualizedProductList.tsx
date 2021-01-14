@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ApiContext } from "../../../store";
+import { ApiContext } from "../../../api/context";
 import SingleProduct from "./SingleProduct";
 import { List } from "react-virtualized";
 import { useWindowDimensions } from "../../../util";

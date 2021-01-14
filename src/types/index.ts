@@ -21,6 +21,10 @@ export type Product = {
   availability: Availability;
 };
 
+export enum WSEvent {
+  CacheUpdated = "cache_updated",
+}
+
 export declare namespace Api {
   export type Response = {
     category: Category;
@@ -32,6 +36,12 @@ export declare namespace Api {
     state: Api.Response;
     loading: boolean;
     set: (c: Category) => Promise<void>;
+  };
+
+  export type Hook = {
+    state: Api.Response;
+    loading: boolean;
+    set: (category: Category) => any;
   };
 }
 

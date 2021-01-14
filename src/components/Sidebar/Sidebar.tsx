@@ -3,7 +3,7 @@ import Navigation from "./Navigation";
 import Symbols from "./Symbols";
 import MobileNav from "./Mobile/MobileNav";
 import LoadingIcon from "../icons/LoadingIcon";
-import { ApiContext } from "../../store";
+import { ApiContext } from "../../api/context";
 import "./Sidebar.css";
 
 const Sidebar = () => {

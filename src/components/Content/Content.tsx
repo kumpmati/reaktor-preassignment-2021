@@ -1,6 +1,6 @@
 import VirtualizedProductList from "./Product/VirtualizedProductList";
 import { useContext } from "react";
-import { ApiContext } from "../../store";
+import { ApiContext } from "../../api/context";
 import { Category } from "../../types";
 import "./Content.css";
 

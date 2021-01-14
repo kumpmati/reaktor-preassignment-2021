@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
-import { getProducts } from "../api";
+import { getProducts } from ".";
 import { Api, Category } from "../types";
 
 /**
  * Initial state of the product view
  */
-export const initialData: Api.Response = {
+const initialData: Api.Response = {
   category: Category.None,
   error: "",
   response: [],
@@ -24,9 +24,9 @@ export const ApiContext = createContext<Api.Context>({
  * API wrapper to enable statefulness
  * @param initial Initial state of the data
  */
-export const useApi = (initial: Api.Response) => {
+export const useApi = (): Api.Hook => {
   const [loading, setLoading] = useState(false);
-  const [state, setState] = useState(initial);
+  const [state, setState] = useState(initialData);
 
   /**
    * Changes which category is visible
