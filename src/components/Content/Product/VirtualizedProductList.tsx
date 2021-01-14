@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { ApiContext } from "../../store";
+import { ApiContext } from "../../../store";
 import SingleProduct from "./SingleProduct";
 import { List } from "react-virtualized";
+import { useWindowDimensions } from "../../../util";
 import "./VirtualizedProductList.css";
-import { useWindowDimensions } from "../../util";
 
 const VirtualizedProductList = () => {
   const { state } = useContext(ApiContext);

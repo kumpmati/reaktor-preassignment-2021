@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
-import { ApiContext } from "../../store";
-import LoadingIcon from "../LoadingIcon";
+import { useContext, useState } from "react";
 import Navigation from "./Navigation";
 import Symbols from "./Symbols";
-import MobileNav from "./MobileNav";
+import MobileNav from "./Mobile/MobileNav";
+import LoadingIcon from "../icons/LoadingIcon";
+import { ApiContext } from "../../store";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -23,7 +23,7 @@ const Sidebar = () => {
         <section id="category">
           <div>
             <h2>Category</h2>
-            {loading && <LoadingIcon />}
+            <span id="desktop-spinner">{loading && <LoadingIcon />}</span>
           </div>
           <Navigation hide={hide} />
         </section>

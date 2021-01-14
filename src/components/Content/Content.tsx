@@ -1,4 +1,4 @@
-import VirtualizedProductList from "./VirtualizedProductList";
+import VirtualizedProductList from "./Product/VirtualizedProductList";
 import { useContext } from "react";
 import { ApiContext } from "../../store";
 import { Category } from "../../types";

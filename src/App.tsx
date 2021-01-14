@@ -1,6 +1,6 @@
 import { ApiContext, useApi, initialData } from "./store";
-import Sidebar from "./components/Sidebar";
-import Content from "./components/Content";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Content from "./components/Content/Content";
 
 const App = () => {
   const api = useApi(initialData);

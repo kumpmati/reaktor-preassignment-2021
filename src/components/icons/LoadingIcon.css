@@ -1,6 +1,5 @@
 .spinner > svg {
   width: 1.5em;
-  margin-right: 0.75em;
   animation: spin 800ms infinite;
 }
 
