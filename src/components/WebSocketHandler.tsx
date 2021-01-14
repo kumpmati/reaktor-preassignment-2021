@@ -12,7 +12,7 @@ const WebSocketHandler = () => {
   apiRef.current = api; // keep ref up to date inside useEffect
 
   useEffect(() => {
-    const ws = new WebSocket(process.env.REACT_APP_WS_URL || "");
+    const ws = new WebSocket(process.env.REACT_APP_WS_URL || "ws://localhost");
 
     ws.addEventListener("message", message => {
       switch (message.data) {
