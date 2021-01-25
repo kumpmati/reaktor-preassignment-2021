@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ApiContext } from "../../api/context";
 import { Api, WSEvent } from "../../types";
 
@@ -7,6 +7,7 @@ import { Api, WSEvent } from "../../types";
  * updates cache when server notifies of updated cache.
  */
 const WebSocketHandler = () => {
+  const [refresh, setRefresh] = useState({});
   const api = useContext(ApiContext);
   const apiRef = useRef<Api.Context>();
   apiRef.current = api; // keep ref up to date inside useEffect
@@ -26,17 +27,20 @@ const WebSocketHandler = () => {
     });
 
     ws.addEventListener("open", () => console.log("connected"));
-    ws.addEventListener("close", () => console.log("disconnected"));
+    ws.addEventListener("close", () => {
+      console.log("disconnected, reconnecting...");
+      setTimeout(() => setRefresh({}), 1000);
+    });
 
     const keepalive = setInterval(() => {
       if (ws.readyState === ws.OPEN) ws.send("ping");
-    }, 20 * 1000);
+    }, 10 * 1000);
 
     return () => {
       clearInterval(keepalive);
       ws.close();
     };
-  }, []);
+  }, [refresh]);
 
   return <></>;
 };
