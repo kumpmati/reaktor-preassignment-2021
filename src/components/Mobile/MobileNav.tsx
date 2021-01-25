@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ApiContext } from "../../../api/context";
-import LoadingIcon from "../../icons/LoadingIcon";
+import { ApiContext } from "../../api/context";
+import LoadingIcon from "../icons/LoadingIcon";
 import MobileButton from "./MobileButton";
 import "./MobileNav.css";
 

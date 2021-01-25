@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import Navigation from "./Navigation";
-import Symbols from "./Symbols";
-import MobileNav from "./Mobile/MobileNav";
+import Navigation from "../Navigation/Navigation";
+import Symbols from "../Symbols/Symbols";
+import MobileNav from "../Mobile/MobileNav";
 import LoadingIcon from "../icons/LoadingIcon";
 import { ApiContext } from "../../api/context";
 import "./Sidebar.css";

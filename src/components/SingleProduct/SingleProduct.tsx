@@ -1,5 +1,5 @@
-import { Product } from "../../../types";
-import { getAvailabilityIcon } from "../../icons/availability";
+import { Product } from "../../types";
+import { getAvailabilityIcon } from "../icons/availability";
 import "./SingleProduct.css";
 
 /**

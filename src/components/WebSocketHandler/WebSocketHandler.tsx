@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from "react";
-import { ApiContext } from "../api/context";
-import { Api, WSEvent } from "../types";
+import { ApiContext } from "../../api/context";
+import { Api, WSEvent } from "../../types";
 
 /**
  * Connects to the backend WebSocket server and
