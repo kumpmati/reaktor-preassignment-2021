@@ -41,7 +41,5 @@ const WebSocketHandler = () => {
       ws.close();
     };
   }, [refresh]);
-
-  return <></>;
 };
 export default WebSocketHandler;

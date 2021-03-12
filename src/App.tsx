@@ -5,13 +5,13 @@ import WebSocketHandler from "./components/WebSocketHandler/WebSocketHandler";
 
 const App = () => {
   const api = useApi();
+  WebSocketHandler();
 
   return (
     <div className="App">
       <ApiContext.Provider value={api}>
         <Sidebar />
         <Content />
-        <WebSocketHandler />
       </ApiContext.Provider>
     </div>
   );
